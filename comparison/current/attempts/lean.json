@@ -1,0 +1,768 @@
+{
+  "schemaVersion": 1,
+  "status": "failed",
+  "preflight": false,
+  "requested": {
+    "provider": "openai",
+    "model": "gpt-6.2-sol",
+    "thinking": "medium"
+  },
+  "limits": {
+    "providerRequests": 24,
+    "outputTokensPerRequest": 12000,
+    "toolCalls": 64,
+    "browserCalls": 10,
+    "seconds": 720,
+    "toolSeconds": 30
+  },
+  "prompt": {
+    "file": "prompt.txt",
+    "sha256": "f7ff44a43961d63853db714f83d80adbd711dd8b8827698e27200434de82ba6d"
+  },
+  "startedAt": "2026-11-24T18:05:42.181Z",
+  "providerRequests": 15,
+  "toolCalls": 22,
+  "browserCalls": 7,
+  "browserPixelReturns": [
+    {
+      "file": "captures/first.png",
+      "sha256": "364307c5ebe52bcec07d1e5bcf83e6a0fe384c5f873e305c6358ed2b9ba5e47c",
+      "bytes": 252494,
+      "revision": "5d572c36a2d076f78f1e6d22e5aaaf5a509d625aa90eb535e865f0728c31c3f6",
+      "callId": "call_b17339506db64e8cb9698f4482be875c|fc_0ed84315a7e7333d016b05d236045487d0b57824079e32c5fc",
+      "time": "2026-11-24T18:06:47.597Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 1300,
+      "height": 780,
+      "imageWidth": 1300,
+      "imageHeight": 780,
+      "fullPage": false,
+      "capped": false,
+      "state": {
+        "title": "Оттиск",
+        "heading": "",
+        "scrollY": 0,
+        "scrollWidth": 1300,
+        "scrollHeight": 780,
+        "focus": "print(document.querySelector('svg'),'hare');"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": []
+    },
+    {
+      "file": "captures/preview-2.png",
+      "sha256": "613d3cb51bd1001373dd059032cad2feb8a2e47caf96d2f15ab8be22d6fafa68",
+      "bytes": 321838,
+      "revision": "0d599e1a51ac9b436c6fd5f4021e17b4a84c2b344ba9c140be903a5b04224c64",
+      "callId": "call_e3968479b00f4a8e9834f327f17a2b43|fc_0ed84315a7e7333d016b05d2a4535487d09cbe8f7462af0344",
+      "time": "2026-11-24T18:08:38.625Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "fullPage": false,
+      "capped": false,
+      "state": {
+        "title": "Оттиск — мастерская печатной графики",
+        "heading": "Печатнаяграфика.",
+        "scrollY": 0,
+        "scrollWidth": 1440,
+        "scrollHeight": 2078,
+        "focus": "оттиск\nРаботыЗаказать печать ↗\n\n\n\nМАСТЕРСКАЯ «ОТТИСК»Печатнаяграфика.Линогравюра, монотипияи шелкография.Смотреть работы ↓\n↗«Полевой заяц»ЛИ"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": []
+    },
+    {
+      "file": "captures/preview-3.png",
+      "sha256": "e53ca8125d855baa39415c2d073f0c07a55bc20b132a2603d141b7df39776639",
+      "bytes": 233576,
+      "revision": "0d599e1a51ac9b436c6fd5f4021e17b4a84c2b344ba9c140be903a5b04224c64",
+      "callId": "call_4937eb4504d347a38ca69a79d72383cc|fc_0ed84315a7e7333d016b05d2a52fb487d09e40400c458c9d61",
+      "time": "2026-11-24T18:08:39.806Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 390,
+      "height": 844,
+      "imageWidth": 390,
+      "imageHeight": 1931,
+      "fullPage": true,
+      "capped": false,
+      "state": {
+        "title": "Оттиск — мастерская печатной графики",
+        "heading": "Печатнаяграфика.",
+        "scrollY": 0,
+        "scrollWidth": 390,
+        "scrollHeight": 1931,
+        "focus": "оттиск\nРаботыЗаказать печать ↗\n\n\n\nМАСТЕРСКАЯ «ОТТИСК»Печатнаяграфика.Линогравюра, монотипияи шелкография.Смотреть работы ↓\n↗«Полевой заяц»ЛИ"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": []
+    },
+    {
+      "file": "captures/preview-4.png",
+      "sha256": "3bb9c805e6871f2d0144ef422d02e333baaec6698eabbb3e317086fafe8df886",
+      "bytes": 232564,
+      "revision": "92afe172dfd9d954a1bf5b293c42b5aca8da5d6e73c3cbfcd218e670ca3b5f00",
+      "callId": "call_48bdee8e950e4892a0f67c1118d2af34|fc_0ed84315a7e7333d016b05d2e9ca5c87d0876e2898bb090ac0",
+      "time": "2026-11-24T18:09:51.831Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 1366,
+      "height": 865,
+      "imageWidth": 1366,
+      "imageHeight": 865,
+      "fullPage": false,
+      "capped": false,
+      "state": {
+        "title": "Оттиск — мастерская печатной графики",
+        "heading": "Печатная графика.",
+        "scrollY": 715,
+        "scrollWidth": 1366,
+        "scrollHeight": 2021,
+        "focus": "03ПолденьШелкография↗"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": [
+        {
+          "type": "click",
+          "selector": "nav a:first-child",
+          "ok": true
+        },
+        {
+          "type": "click",
+          "selector": "[data-work=sun]",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "file": "captures/preview-5.png",
+      "sha256": "2dd45db9f58bfd38234828b80150495e8a961984b8d1039fdc26dfd4e1023560",
+      "bytes": 116691,
+      "revision": "92afe172dfd9d954a1bf5b293c42b5aca8da5d6e73c3cbfcd218e670ca3b5f00",
+      "callId": "call_f38158b4525c4b61883b41005674127e|fc_0ed84315a7e7333d016b05d2ee400087d0b8fdc34afe991717",
+      "time": "2026-11-24T18:09:53.024Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 390,
+      "height": 844,
+      "imageWidth": 390,
+      "imageHeight": 844,
+      "fullPage": false,
+      "capped": false,
+      "state": {
+        "title": "Оттиск — мастерская печатной графики",
+        "heading": "Печатная графика.",
+        "scrollY": 0,
+        "scrollWidth": 390,
+        "scrollHeight": 1849,
+        "focus": "×"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": [
+        {
+          "type": "press",
+          "key": "Enter",
+          "selector": "[data-zoom=hare]",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "file": "captures/preview-6.png",
+      "sha256": "600afcd21988b4b26cdb2c7aabd123c771e6e131ce4f10f7a342356abe41284b",
+      "bytes": 77093,
+      "revision": "92afe172dfd9d954a1bf5b293c42b5aca8da5d6e73c3cbfcd218e670ca3b5f00",
+      "callId": "call_7983cbd8d1604c88ad121a336f07337b|fc_0ed84315a7e7333d016b05d2ee400087d098db00b30b9c0a6f",
+      "time": "2026-11-24T18:09:54.228Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 390,
+      "height": 844,
+      "imageWidth": 390,
+      "imageHeight": 844,
+      "fullPage": false,
+      "capped": false,
+      "state": {
+        "title": "Оттиск — мастерская печатной графики",
+        "heading": "Печатная графика.",
+        "scrollY": 1005,
+        "scrollWidth": 390,
+        "scrollHeight": 1882,
+        "focus": "Скачать ТЗ ↓"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": [
+        {
+          "type": "click",
+          "selector": "nav a:last-child",
+          "ok": true
+        },
+        {
+          "type": "press",
+          "key": "A",
+          "selector": "[name=size]",
+          "ok": true
+        },
+        {
+          "type": "press",
+          "key": "4",
+          "selector": "[name=size]",
+          "ok": true
+        },
+        {
+          "type": "press",
+          "key": "2",
+          "selector": "[name=count]",
+          "ok": true
+        },
+        {
+          "type": "click",
+          "selector": "#brief button",
+          "ok": true
+        }
+      ]
+    },
+    {
+      "file": "captures/preview-7.png",
+      "sha256": "f18b76199901ac9fa605362149fb31c2cbfd6cfb68a76a300de5285d8aea9867",
+      "bytes": 94543,
+      "revision": "92afe172dfd9d954a1bf5b293c42b5aca8da5d6e73c3cbfcd218e670ca3b5f00",
+      "callId": "call_22db9a3a193e40b5a4b8a53527bb0126|fc_0ed84315a7e7333d016b05d2ee400087d091e384a33e47aa36",
+      "time": "2026-11-24T18:09:55.457Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 320,
+      "height": 680,
+      "imageWidth": 320,
+      "imageHeight": 680,
+      "fullPage": false,
+      "capped": false,
+      "state": {
+        "title": "Оттиск — мастерская печатной графики",
+        "heading": "Печатная графика.",
+        "scrollY": 0,
+        "scrollWidth": 320,
+        "scrollHeight": 1800,
+        "focus": "↗"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": [
+        {
+          "type": "press",
+          "key": "Enter",
+          "selector": "[data-zoom=hare]",
+          "ok": true
+        },
+        {
+          "type": "press",
+          "key": "Escape",
+          "ok": true
+        }
+      ]
+    }
+  ],
+  "skillReads": [
+    {
+      "callId": "call_fc5dffb600ea4822bd0dd82a3ff12018|fc_0ed84315a7e7333d016b05d1f8141487d08f762a765744f8a5",
+      "path": "/skill/SKILL.md",
+      "bytes": 8863,
+      "sha256": "6280c2c5cae6c27619814299dd6d5c1f0ed9ae83e6c9dd2d1767fd8ef24992d5"
+    },
+    {
+      "callId": "call_4db5b3e82db040288f0b3b65a84fd7f8|fc_0ed84315a7e7333d016b05d1fb469c87d0b27df0e52a9ba557",
+      "path": "/skill/references/direction-studies.md",
+      "bytes": 2816,
+      "sha256": "d65722252b52b0720f4f248a5b7f36822c5bf8c09399b95d6dc09450b397e45c"
+    },
+    {
+      "callId": "call_864769498c4d4a07a0fbd72944ccfa56|fc_0ed84315a7e7333d016b05d1fc652087d08f75d36762147da6",
+      "path": "/skill/references/build-the-frame.md",
+      "bytes": 3827,
+      "sha256": "6f0dbe20b610b632679e624a1adc12c79ff265d989b92fbd784fa0b26747fea5"
+    },
+    {
+      "callId": "call_034cde4f818f438a849d5ac5f50acb7b|fc_0ed84315a7e7333d016b05d24441f487d0adda7f7f46a4c518",
+      "path": "/skill/references/interaction.md",
+      "bytes": 2992,
+      "sha256": "35cd3cbad0b7d88e46747de6544cb996d1b965c0aac8142001d4fbfcd3b8b13c"
+    },
+    {
+      "callId": "call_8ba356a75b5540e6802724d16e4b6cfc|fc_0ed84315a7e7333d016b05d244439887d0b6de6e8ef00682ee",
+      "path": "/skill/references/signs.md",
+      "bytes": 8711,
+      "sha256": "ed051b2ed17758145ff5563a3b20fbc9203380f882130b1f25bf6c2e22b69120"
+    },
+    {
+      "callId": "call_ac8124c35e304c7195b6efd26763729e|fc_0ed84315a7e7333d016b05d244439887d0bf17d88ca718181b",
+      "path": "/skill/references/finish-check.md",
+      "bytes": 3780,
+      "sha256": "0ad9edbad433e9be7ca410df5838283e1448fe59124c79fa1a786a0bcba52806"
+    }
+  ],
+  "captures": {
+    "first": {
+      "file": "captures/first.png",
+      "sha256": "364307c5ebe52bcec07d1e5bcf83e6a0fe384c5f873e305c6358ed2b9ba5e47c",
+      "bytes": 252494,
+      "revision": "5d572c36a2d076f78f1e6d22e5aaaf5a509d625aa90eb535e865f0728c31c3f6",
+      "callId": "call_b17339506db64e8cb9698f4482be875c|fc_0ed84315a7e7333d016b05d236045487d0b57824079e32c5fc",
+      "time": "2026-11-24T18:06:47.597Z",
+      "engine": "chromium",
+      "version": "159.0.8154.6",
+      "route": "/",
+      "width": 1300,
+      "height": 780,
+      "imageWidth": 1300,
+      "imageHeight": 780,
+      "fullPage": false,
+      "capped": false,
+      "state": {
+        "title": "Оттиск",
+        "heading": "",
+        "scrollY": 0,
+        "scrollWidth": 1300,
+        "scrollHeight": 780,
+        "focus": "print(document.querySelector('svg'),'hare');"
+      },
+      "pageErrors": [],
+      "networkErrors": [],
+      "blockedRequests": [],
+      "actionResults": []
+    },
+    "final": {
+      "mobile": {
+        "file": "captures/final-mobile.png",
+        "sha256": "373734e6c6ee52d21456ffefc4bf61cf183b241200f9897875d6a38236bd5202",
+        "bytes": 223918,
+        "revision": "92afe172dfd9d954a1bf5b293c42b5aca8da5d6e73c3cbfcd218e670ca3b5f00",
+        "callId": null,
+        "time": "2026-11-24T18:10:02.696Z",
+        "engine": "chromium",
+        "version": "159.0.8154.6",
+        "route": "/",
+        "width": 390,
+        "height": 844,
+        "imageWidth": 390,
+        "imageHeight": 1849,
+        "fullPage": true,
+        "capped": false,
+        "state": {
+          "title": "Оттиск — мастерская печатной графики",
+          "heading": "Печатная графика.",
+          "scrollY": 0,
+          "scrollWidth": 390,
+          "scrollHeight": 1849,
+          "focus": "оттиск\nРаботыТЗ на печать ↗\n\n\n\nРУЧНАЯ ПЕЧАТЬПечатная графика.Линогравюра, монотипия и шелкография.Смотреть работы ↓\n↗«Полевой заяц»ЛИНОГРАВЮ"
+        },
+        "pageErrors": [],
+        "networkErrors": [],
+        "blockedRequests": [],
+        "actionResults": []
+      }
+    }
+  },
+  "failures": [
+    "Connection error.: Client network socket disconnected before secure TLS connection was established (ECONNRESET)",
+    "Final desktop capture: e.screenshot: Protocol error (Page.captureScreenshot): Unable to capture screenshot Call log: - taking page screenshot - disabled all CSS animations - waiting for fonts to load... - fonts loaded "
+  ],
+  "usableOutput": false,
+  "skills": [
+    {
+      "name": "ultimate-frontend",
+      "description": "Design, implement and critique websites and product interfaces. Use for art direction, content editing, responsive composition, interaction design and visual QA. Build work that belongs to the subject, from the opening through the last action.",
+      "filePath": "/skill/SKILL.md",
+      "sha256": "6280c2c5cae6c27619814299dd6d5c1f0ed9ae83e6c9dd2d1767fd8ef24992d5"
+    }
+  ],
+  "settings": {
+    "model": "gpt-6.2-sol",
+    "provider": "openai",
+    "api": "openai-responses",
+    "thinking": "medium",
+    "tools": [
+      "list_site",
+      "read",
+      "write_site",
+      "preview"
+    ],
+    "extensions": [],
+    "contextFiles": [],
+    "persistence": "memory",
+    "cacheWarming": "off",
+    "retries": 0
+  },
+  "responses": [
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 671,
+        "output": 22,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 693,
+        "cost": {
+          "input": 0.0013419999999999999,
+          "output": 0.00022,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.0015619999999999998,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 2463,
+        "output": 73,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 2536,
+        "cost": {
+          "input": 0.004926,
+          "output": 0.0007300000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.005656,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 1567,
+        "output": 2364,
+        "cacheRead": 2304,
+        "cacheWrite": 0,
+        "reasoning": 160,
+        "totalTokens": 6235,
+        "cost": {
+          "input": 0.003134,
+          "output": 0.02364,
+          "cacheRead": 0.00023040000000000002,
+          "cacheWrite": 0,
+          "total": 0.0270044,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 2673,
+        "output": 197,
+        "cacheRead": 3584,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 6454,
+        "cost": {
+          "input": 0.005346,
+          "output": 0.00197,
+          "cacheRead": 0.00035840000000000004,
+          "cacheWrite": 0,
+          "total": 0.0076744,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 331,
+        "output": 22,
+        "cacheRead": 6144,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 6497,
+        "cost": {
+          "input": 0.0006619999999999999,
+          "output": 0.00022,
+          "cacheRead": 0.0006144000000000001,
+          "cacheWrite": 0,
+          "total": 0.0014964000000000002,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 1700,
+        "output": 469,
+        "cacheRead": 6144,
+        "cacheWrite": 0,
+        "reasoning": 389,
+        "totalTokens": 8313,
+        "cost": {
+          "input": 0.0034,
+          "output": 0.004690000000000001,
+          "cacheRead": 0.0006144000000000001,
+          "cacheWrite": 0,
+          "total": 0.0087044,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 4312,
+        "output": 1477,
+        "cacheRead": 7424,
+        "cacheWrite": 0,
+        "reasoning": 73,
+        "totalTokens": 13213,
+        "cost": {
+          "input": 0.008624,
+          "output": 0.014770000000000002,
+          "cacheRead": 0.0007424,
+          "cacheWrite": 0,
+          "total": 0.024136400000000002,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 1715,
+        "output": 2149,
+        "cacheRead": 11520,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 15384,
+        "cost": {
+          "input": 0.00343,
+          "output": 0.021490000000000002,
+          "cacheRead": 0.001152,
+          "cacheWrite": 0,
+          "total": 0.026072,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 2350,
+        "output": 775,
+        "cacheRead": 13056,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 16181,
+        "cost": {
+          "input": 0.0047,
+          "output": 0.007750000000000001,
+          "cacheRead": 0.0013056,
+          "cacheWrite": 0,
+          "total": 0.013755600000000002,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 843,
+        "output": 60,
+        "cacheRead": 15360,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 16263,
+        "cost": {
+          "input": 0.001686,
+          "output": 0.0006000000000000001,
+          "cacheRead": 0.001536,
+          "cacheWrite": 0,
+          "total": 0.003822,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 3032,
+        "output": 1795,
+        "cacheRead": 16128,
+        "cacheWrite": 0,
+        "reasoning": 357,
+        "totalTokens": 20955,
+        "cost": {
+          "input": 0.006064,
+          "output": 0.01795,
+          "cacheRead": 0.0016128000000000002,
+          "cacheWrite": 0,
+          "total": 0.0256268,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 2033,
+        "output": 185,
+        "cacheRead": 18944,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 21162,
+        "cost": {
+          "input": 0.004066,
+          "output": 0.00185,
+          "cacheRead": 0.0018944,
+          "cacheWrite": 0,
+          "total": 0.0078104,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 320,
+        "output": 877,
+        "cacheRead": 20864,
+        "cacheWrite": 0,
+        "reasoning": 58,
+        "totalTokens": 22061,
+        "cost": {
+          "input": 0.0006399999999999999,
+          "output": 0.00877,
+          "cacheRead": 0.0020864,
+          "cacheWrite": 0,
+          "total": 0.0114964,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "toolUse",
+      "usage": {
+        "input": 1219,
+        "output": 240,
+        "cacheRead": 20864,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 22323,
+        "cost": {
+          "input": 0.002438,
+          "output": 0.0024000000000000002,
+          "cacheRead": 0.0020864,
+          "cacheWrite": 0,
+          "total": 0.006924400000000001,
+          "totalFromProvider": false
+        }
+      }
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-6.2-sol",
+      "stopReason": "error",
+      "usage": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "totalTokens": 0,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
+      }
+    }
+  ],
+  "usage": {
+    "sessionId": "01a20ebc-29ae-7378-b601-794ae64b955f",
+    "userMessages": 1,
+    "assistantMessages": 15,
+    "toolCalls": 22,
+    "toolResults": 22,
+    "totalMessages": 39,
+    "tokens": {
+      "input": 25229,
+      "output": 10705,
+      "cacheRead": 142336,
+      "cacheWrite": 0,
+      "total": 178270
+    },
+    "cost": 0.1717416,
+    "contextUsage": {
+      "tokens": 27656,
+      "contextWindow": 272000,
+      "percent": 10.16764705882353
+    }
+  },
+  "output": {
+    "entry": "site/index.html",
+    "sha256": "92afe172dfd9d954a1bf5b293c42b5aca8da5d6e73c3cbfcd218e670ca3b5f00",
+    "files": {
+      "art.js": "521ae8049f61ec8f19a8b18dff30ab549cd70e53e7aeec44c9318b8c4ea9442d",
+      "finish.css": "d498585a3ceb610b3d8b13951842c146719e3d1cd4bc665c61d06eb13895ef3d",
+      "index.html": "a366210e3fbf3b125fd6d876e3e32904db988b14914a51b05808e0a4c244abce",
+      "site.js": "e1f69f8c619df71d6bf9a5461c59d59ab1bc46ff6f59208889ff53ebb25b60ed",
+      "style.css": "05defd271e6d968bab777f6d88788646e057e7c7a1064245d12c1d564b122d2f"
+    }
+  },
+  "finishedAt": "2026-11-24T18:10:02.697Z"
+}

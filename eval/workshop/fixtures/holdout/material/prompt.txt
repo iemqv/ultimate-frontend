@@ -1,0 +1,5 @@
+Build Snow in Three Prints, a short online exhibit for a print-study group. Show how Utagawa Hiroshige depicts snow at Kambara, Asuka Hill and Matsuchiyama. Visitors should be able to distinguish the three places and notice at least one visual detail in each print that helps tell its winter story.
+
+Use all three supplied local reproductions as the works under discussion. Give each a factual caption with its title and date, and credit the Cleveland Museum of Art. The object facts and provenance are in assets/sources.md.
+
+Work in the supplied site folder. The exhibit must work on a phone and a desktop without fetching anything from the internet.

@@ -1,0 +1,83 @@
+{
+  "desktop": {
+    "engine": "chromium",
+    "version": "159.0.8154.6",
+    "route": "/",
+    "width": 1440,
+    "height": 960,
+    "imageWidth": 1440,
+    "imageHeight": 960,
+    "fullPage": false,
+    "capped": false,
+    "state": {
+      "title": "ОТТИСК. Мастерская печатной графики",
+      "heading": "Печатнаяграфика.",
+      "scrollY": 0,
+      "scrollWidth": 1440,
+      "scrollHeight": 3111,
+      "focus": "К содержанию\n\nОТТИСК.\nРаботыМастерскаяЗанятия\nСвязаться ↗\nМеню +\n\n\n\n\n Независимая мастерская\nПечатнаяграфика.\nРежем, красим и печатаем вручн"
+    },
+    "pageErrors": [],
+    "networkErrors": [],
+    "blockedRequests": [],
+    "actionResults": [],
+    "sha256": "52e950819318e447d843153cdd5c868d80bfa3164a27fee94aaacc6750da336e",
+    "revision": "900729d45c4bde94233a8d114f211992ef7c494123917db39272449d92a32529"
+  },
+  "mobile": {
+    "engine": "chromium",
+    "version": "159.0.8154.6",
+    "route": "/",
+    "width": 390,
+    "height": 844,
+    "imageWidth": 390,
+    "imageHeight": 844,
+    "fullPage": false,
+    "capped": false,
+    "state": {
+      "title": "ОТТИСК. Мастерская печатной графики",
+      "heading": "Печатнаяграфика.",
+      "scrollY": 0,
+      "scrollWidth": 390,
+      "scrollHeight": 3093,
+      "focus": "К содержанию\n\nОТТИСК.\nРаботыМастерскаяЗанятияСвязаться\nСвязаться ↗\nМеню +\n\n\n\n\n Независимая мастерская\nПечатнаяграфика.\nРежем, красим и печат"
+    },
+    "pageErrors": [],
+    "networkErrors": [],
+    "blockedRequests": [],
+    "actionResults": [],
+    "sha256": "a95a3294c888a781f4927eb2dc7512fca5c8d40ed32f86fc5fccbc2da8083e19",
+    "revision": "900729d45c4bde94233a8d114f211992ef7c494123917db39272449d92a32529"
+  },
+  "middle": {
+    "engine": "chromium",
+    "version": "159.0.8154.6",
+    "route": "/",
+    "width": 1440,
+    "height": 960,
+    "imageWidth": 1440,
+    "imageHeight": 960,
+    "fullPage": false,
+    "capped": false,
+    "state": {
+      "title": "ОТТИСК. Мастерская печатной графики",
+      "heading": "Печатнаяграфика.",
+      "scrollY": 1076,
+      "scrollWidth": 1440,
+      "scrollHeight": 3111,
+      "focus": "К содержанию\n\nОТТИСК.\nРаботыМастерскаяЗанятия\nСвязаться ↗\nМеню +\n\n\n\n\n Независимая мастерская\nПечатнаяграфика.\nРежем, красим и печатаем вручн"
+    },
+    "pageErrors": [],
+    "networkErrors": [],
+    "blockedRequests": [],
+    "actionResults": [
+      {
+        "type": "scroll",
+        "y": 1076,
+        "ok": true
+      }
+    ],
+    "sha256": "bd402927e7110e24a5b8041be98169e5cb0a4b2acdd67e8f2a6da286aeb27ec0",
+    "revision": "900729d45c4bde94233a8d114f211992ef7c494123917db39272449d92a32529"
+  }
+}

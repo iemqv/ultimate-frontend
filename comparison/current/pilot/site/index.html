@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f0e6"><meta name="description" content="Оттиск — печатная мастерская. Графические листы и знакомство с ручными техниками печати.">
+<title>Оттиск — печатная мастерская</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="finish.css"><link rel="icon" href="mark.svg" type="image/svg+xml">
+</head>
+<body id="top">
+<svg xmlns="http://www.w3.org/2000/svg" class="symbols" aria-hidden="true"><symbol id="mark" viewBox="0 0 38 38"><path d="M2 12 19 3l17 9-17 9L2 12Z" fill="currentColor"/><path d="m2 19 17 9 17-9M2 26l17 9 17-9" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="m11 12 8-4 8 4-8 4-8-4Z" fill="#f5f0e6"/></symbol><symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M8 6h10v10" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol><symbol id="download-icon" viewBox="0 0 24 24"><path d="M12 3v13m-5-5 5 5 5-5M5 20h14" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol></svg>
+<header class="shell masthead">
+<a class="brand" href="#top" aria-label="Оттиск — на главную"><svg aria-hidden="true"><use href="#mark"/></svg><span><strong>оттиск</strong><small>печатная мастерская</small></span></a>
+<nav aria-label="Основная навигация"><a href="#works">Работы</a><a href="#techniques">Техники</a><a href="#studio">О мастерской</a></nav>
+<button class="outline header-action" data-open="tide" type="button">Открыть оттиск <svg aria-hidden="true"><use href="#diagonal"/></svg></button>
+</header>
+<main class="shell">
+<section class="hero" aria-labelledby="headline">
+<div class="hero-copy"><div class="eyebrow"><span></span>МАСТЕРСКАЯ ПЕЧАТНОЙ ГРАФИКИ</div><h1 id="headline">Печатная<br> графика<br> <em>вручную.</em></h1><p>Линогравюра, офорт и шелкография.<br class="desktop-break"> От эскиза на столе до оттиска на бумаге.</p><a href="#works" class="solid">Смотреть работы <svg aria-hidden="true"><use href="#arrow"/></svg></a></div>
+<figure class="hero-figure"><button type="button" data-open="tide" class="hero-art" aria-label="Рассмотреть лист «Красный прилив»"><span class="art" data-print="tide"></span><span class="inspect"><svg aria-hidden="true"><use href="#diagonal"/></svg></span></button><figcaption><span>«Красный прилив»</span><span>Цифровой эскиз под линогравюру</span></figcaption></figure>
+</section>
+<section class="works" id="works" aria-labelledby="works-title">
+<div class="section-head"><h2 id="works-title">Работы</h2><span class="metadata">Графические листы</span></div>
+<div class="works-layout">
+<div class="work-list" role="group" aria-label="Выбор графического листа"><button type="button" data-work="herbarium" aria-pressed="true"><span class="work-index" aria-hidden="true">01</span><span>Сухоцвет</span><svg aria-hidden="true"><use href="#arrow"/></svg></button><button type="button" data-work="tide" aria-pressed="false"><span class="work-index" aria-hidden="true">02</span><span>Красный прилив</span><svg aria-hidden="true"><use href="#arrow"/></svg></button><button type="button" data-work="wind" aria-pressed="false"><span class="work-index" aria-hidden="true">03</span><span>Дюны</span><svg aria-hidden="true"><use href="#arrow"/></svg></button></div>
+<figure class="work-figure"><button type="button" class="work-art" id="work-open" data-open="herbarium" aria-label="Рассмотреть лист «Сухоцвет»"><img id="work-image" src="herbarium.svg" width="780" height="630" alt="Силуэт сухого полевого растения на фоне красного круга"><span class="inspect"><svg aria-hidden="true"><use href="#diagonal"/></svg></span></button><figcaption><span id="work-caption" aria-live="polite">«Сухоцвет» · цифровой эскиз</span><a id="work-download" href="herbarium.svg" download="Сухоцвет.svg">Скачать SVG <svg aria-hidden="true"><use href="#download-icon"/></svg></a></figcaption></figure>
+</div>
+</section>
+<section class="techniques" id="techniques" aria-labelledby="tech-title">
+<div class="section-head"><h2 id="tech-title">Техники</h2></div>
+<div class="tech-layout"><figure class="detail-figure"><div class="detail-plate" aria-hidden="true"></div><figcaption>Штрих в увеличении · «Красный прилив»</figcaption></figure><div class="methods"><details name="technique" open><summary>Линогравюра</summary><p>Рисунок вырезают на линолеуме. Валик оставляет краску на выступах, а вырезанные участки на бумаге остаются светлыми.</p></details><details name="technique"><summary>Офорт</summary><p>Кислота углубляет линии, процарапанные в защитном слое на металле. Краска остаётся в этих углублениях и под давлением переходит на влажную бумагу.</p></details><details name="technique"><summary>Шелкография</summary><p>Краску продавливают через открытые участки сетки. Для каждого цвета готовят свой трафарет и совмещают слои при печати.</p></details></div></div>
+</section>
+</main>
+<footer id="studio"><div class="shell studio"><div><span class="metadata">О мастерской</span><h2>От эскиза<br> к оттиску.</h2></div><div><p>«Оттиск» — мастерская печатной графики. Здесь можно рассмотреть цифровые эскизы и узнать, как рисунок с печатной формы переносится на бумагу.</p><a class="outline" href="#works">К графическим листам <svg aria-hidden="true"><use href="#arrow"/></svg></a></div></div><div class="shell footer-line"><a class="brand foot-brand" href="#top"><svg aria-hidden="true"><use href="#mark"/></svg><span><strong>оттиск</strong><small>печатная мастерская</small></span></a><a href="#top" class="top-link">Наверх ↑</a></div></footer>
+<dialog id="viewer" aria-labelledby="viewer-title"><div class="dialog-head"><h2 id="viewer-title"></h2><form method="dialog"><button type="submit" autofocus class="close" aria-label="Закрыть просмотр">×</button></form></div><img id="viewer-image" width="780" height="630" alt=""><div class="dialog-foot"><span>Цифровой эскиз</span><a id="viewer-download" download>Скачать SVG <svg aria-hidden="true"><use href="#download-icon"/></svg></a></div></dialog>
+<div hidden data-print="wind"></div>
+<script src="art.js"></script><script src="main.js"></script>
+</body></html>

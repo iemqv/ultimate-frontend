@@ -1,0 +1,13 @@
+{
+  "name": "ultimate-frontend",
+  "version": "0.5.0",
+  "files": ["skills/", "licenses/", "ATTRIBUTION.md", "NOTICE"],
+  "private": true,
+  "description": "One agent skill for frontend direction, interaction design, and browser verification.",
+  "license": "(Apache-2.0 AND MIT AND CC-BY-4.0)",
+  "keywords": ["pi-package", "agent-skills", "frontend"],
+  "repository": "git+https://github.com/iemqv/ultimate-frontend.git",
+  "pi": {
+    "skills": ["./skills"]
+  }
+}

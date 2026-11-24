@@ -1,0 +1,43 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  background: #f4f3ee;
+  color: #202d27;
+  accent-color: #245a47;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+header, main { padding: 1.25rem clamp(1rem, 4vw, 4rem); }
+header { background: #213b30; color: #fffaf0; }
+header p { max-width: 66ch; }
+.eyebrow { font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin-block: .4rem; }
+h2, h3 { overflow-wrap: anywhere; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 3px solid #9b4808; outline-offset: 3px; }
+
+.toolbar, #ballot, article { border: 1px solid #adb6ac; border-radius: .5rem; background: #fff; }
+.toolbar { display: flex; align-items: end; flex-wrap: wrap; gap: .75rem; padding: 1rem; }
+.toolbar label { display: grid; gap: .3rem; min-width: 0; }
+#comparison { max-width: min(75vw, 28rem); }
+#status { width: 100%; margin: 0; min-height: 1.5em; }
+button, select, textarea { font: inherit; color: inherit; background: #fff; border: 1px solid #658075; border-radius: .25rem; padding: .55rem .7rem; }
+button:not(:disabled) { background: #245a47; color: white; cursor: pointer; }
+button:disabled, select:disabled { opacity: .65; }
+
+#sides, #choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+article { min-width: 0; overflow: hidden; }
+article h3, article > p, .viewport > p { margin: .75rem 1rem; overflow-wrap: anywhere; }
+.viewport { overflow: auto; border-top: 1px solid #adb6ac; background: #edeee9; }
+img { display: block; max-width: 100%; height: auto; margin-inline: auto; }
+iframe { display: block; margin-inline: auto; border: 0; background: #fff; }
+#ballot { margin-block: 1rem; padding: 1rem; }
+#ballot h2 { margin-top: 0; }
+fieldset { display: flex; flex-wrap: wrap; gap: .65rem; min-width: 0; border: 1px solid #adb6ac; border-radius: .25rem; }
+#ballot > label, textarea { display: block; margin-block: .75rem; }
+textarea { width: 100%; resize: vertical; }
+
+@media (max-width: 52rem) {
+  #sides, #choices { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,5 @@
+Build a one-page site for Folding Table Chess, a free, drop-in chess meetup at Narrows Library. A first-time visitor should be able to decide whether it’s for them and know exactly when and where to turn up.
+
+We meet from 2 to 4 p.m. on the second Sunday of each month in the library’s East Room. Beginners and people who haven’t played in years are welcome. Boards and pieces are provided. There’s no sign-up; just come in and ask for a game.
+
+Work in the supplied site folder. Make the page usable on a phone and a desktop without fetching anything from the internet.

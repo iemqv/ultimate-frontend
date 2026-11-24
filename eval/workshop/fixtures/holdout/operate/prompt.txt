@@ -1,0 +1,5 @@
+Build a rundown planner for Night Signal Radio’s seven-minute community bulletin. A producer needs to choose clips and know whether they fit before going on air. Use the clip catalogue and time limit in clips.json; there is no audio to play or upload.
+
+Start with nothing selected. Show each clip’s duration and let the producer add or remove any clip, with no clip counted twice. Keep the combined duration and time left up to date. Make it clear when the bulletin exactly fills the slot, and when it runs long show by how much. Keep editing possible in either case, including returning the plan to empty. Use minutes and seconds for the displayed times.
+
+Work in the supplied site folder. Make the entire flow work with a keyboard and on a phone, with no external services or internet dependencies.

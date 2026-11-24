@@ -1,0 +1,114 @@
+{
+  "desktop": {
+    "engine": "chromium",
+    "version": "159.0.8154.6",
+    "route": "/",
+    "width": 1440,
+    "height": 960,
+    "imageWidth": 1440,
+    "imageHeight": 960,
+    "fullPage": false,
+    "capped": false,
+    "state": {
+      "title": "Синий оттиск — мастерская печатной графики",
+      "heading": "ПЕЧАТНАЯ ГРАФИКА",
+      "scrollY": 0,
+      "scrollWidth": 1440,
+      "scrollHeight": 960,
+      "focus": "СИНИЙОТТИСКРаботыТехникиО мастерскойИндекс ПЕЧАТНАЯ ГРАФИКАМастерская ручной печатиФактураСеверный ветерЛиногравюра · 24 × 60 см01 / 03Синий"
+    },
+    "pageErrors": [],
+    "networkErrors": [],
+    "blockedRequests": [],
+    "actionResults": [],
+    "sha256": "0d6f557d9a7f4af565b88a47ce6333f8b4c0697bd39fcb8021e3f8543fd25a36",
+    "revision": "7cf8c9017bfa0130496d0dd772d79a0507af520571cf978855b41d4032f5ce7e"
+  },
+  "mobile": {
+    "engine": "chromium",
+    "version": "159.0.8154.6",
+    "route": "/",
+    "width": 390,
+    "height": 844,
+    "imageWidth": 390,
+    "imageHeight": 844,
+    "fullPage": false,
+    "capped": false,
+    "state": {
+      "title": "Синий оттиск — мастерская печатной графики",
+      "heading": "ПЕЧАТНАЯ ГРАФИКА",
+      "scrollY": 0,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "focus": "СИНИЙОТТИСКРаботыТехникиО мастерскойИндекс ПЕЧАТНАЯ ГРАФИКАМастерская ручной печатиФактураСеверный ветерЛиногравюра · 24 × 60 см01 / 03Синий"
+    },
+    "pageErrors": [],
+    "networkErrors": [],
+    "blockedRequests": [],
+    "actionResults": [],
+    "sha256": "0cec231fb824bdb41811e5002dd247b4628be7c40aea426f49ebb5ab88a6c090",
+    "revision": "7cf8c9017bfa0130496d0dd772d79a0507af520571cf978855b41d4032f5ce7e"
+  },
+  "middle": {
+    "engine": "chromium",
+    "version": "159.0.8154.6",
+    "route": "/",
+    "width": 1440,
+    "height": 960,
+    "imageWidth": 1440,
+    "imageHeight": 960,
+    "fullPage": false,
+    "capped": false,
+    "state": {
+      "title": "Синий оттиск — мастерская печатной графики",
+      "heading": "ПЕЧАТНАЯ ГРАФИКА",
+      "scrollY": 0,
+      "scrollWidth": 1440,
+      "scrollHeight": 960,
+      "focus": "СИНИЙОТТИСКРаботыТехникиО мастерскойИндекс ПЕЧАТНАЯ ГРАФИКАМастерская ручной печатиФактураСеверный ветерЛиногравюра · 24 × 60 см01 / 03Синий"
+    },
+    "pageErrors": [],
+    "networkErrors": [],
+    "blockedRequests": [],
+    "actionResults": [
+      {
+        "type": "scroll",
+        "y": 0,
+        "ok": true
+      }
+    ],
+    "sha256": "0d6f557d9a7f4af565b88a47ce6333f8b4c0697bd39fcb8021e3f8543fd25a36",
+    "revision": "7cf8c9017bfa0130496d0dd772d79a0507af520571cf978855b41d4032f5ce7e"
+  },
+  "next": {
+    "engine": "chromium",
+    "version": "159.0.8154.6",
+    "route": "/",
+    "width": 1440,
+    "height": 960,
+    "imageWidth": 1440,
+    "imageHeight": 960,
+    "fullPage": false,
+    "capped": false,
+    "state": {
+      "title": "Синий оттиск — мастерская печатной графики",
+      "heading": "ПЕЧАТНАЯ ГРАФИКА",
+      "scrollY": 0,
+      "scrollWidth": 1440,
+      "scrollHeight": 960,
+      "focus": ""
+    },
+    "pageErrors": [],
+    "networkErrors": [],
+    "blockedRequests": [],
+    "actionResults": [
+      {
+        "type": "click",
+        "selector": "#next",
+        "ok": true
+      }
+    ],
+    "sha256": "2c60e6e55025219b6b9f32f9f84c570ff2d7248662efaec3e6bfe247424cd4fe",
+    "revision": "7cf8c9017bfa0130496d0dd772d79a0507af520571cf978855b41d4032f5ce7e"
+  }
+}

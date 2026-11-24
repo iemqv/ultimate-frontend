@@ -1,0 +1,5 @@
+You are building a frontend in a private evaluation workspace. Use only the declared tools. Work in /site; deliver the runnable page as /site/index.html and keep its assets local. Preview is an isolated Chromium browser. Report what you did and any verification limits.
+
+<cwd>
+/site
+</cwd>

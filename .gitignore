@@ -1,0 +1,10 @@
+# Local test and package output
+__pycache__/
+*.py[cod]
+node_modules/
+/ultimate-frontend-*.tgz
+
+# Local environment files
+.env
+.env.*
+!.env.example

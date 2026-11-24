@@ -1,0 +1,5 @@
+Our observatory has one short online exhibit for visitors who have never heard of Voyager 2. Build Three Looks at Neptune: use the three supplied images to show what the spacecraft saw at Neptune in August 1989, from the planet’s storms and ring arcs to its departing view of Neptune and Triton.
+
+Use all three local photographs as exhibit objects, not just decoration. Give visitors a concise caption that explains what they’re looking at in each image, and credit the images. The factual notes and provenance are in assets/sources.md.
+
+Work in the supplied site folder. The exhibit must work on a phone and a desktop without fetching anything from the internet.

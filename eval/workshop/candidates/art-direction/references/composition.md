@@ -1,0 +1,33 @@
+# From brief to composition
+
+Use this for a new visual world or a substantial redesign. The sketches can stay in working notes. The deliverable is the working screen, not a design manifesto.
+
+## Find material before style
+
+Pick one concrete thing the audience cares about: the work itself, a transaction, a comparison, a place, a question with an answer. Inventory what you can actually put on screen. Distinguish client assets, licensed stand-ins, original diagrams, and representative data. If there is no photo of the specific object, don't use an unrelated stock photo to imply there is one.
+
+Write one art-direction sentence with consequences: “The visitor examines ___, organized by ___; they can then ___.” Add a physical or informational constraint from the subject: sequence, dimensions, notation, grouping, pace, viewpoint, or how practitioners distinguish one item from the next. This constraint must change the geometry or the interaction, not just the vocabulary. Start from a document or tool used in the field when it helps; borrow its organizing principle, not its decorative patina.
+
+## When a short brief leaves the visitor's task open
+
+Before sketching, try the page as one plausible visitor: “I need to find out ___ before I can ___.” Use a question the available material can answer. For instance, a first-time visitor may need to tell which option requires prior experience. The useful change may be showing that prerequisite beside the option, not adding a quiz, filter or booking flow. For an exhibition or a story, the task may simply be finding a work and looking at it closely. Don't turn every visit into a purchase. If the brief already specifies the task and flow, use those; don't invent another.
+
+Locate the moment where an answer would otherwise require guessing, remembering a value, or opening each option in turn. Put that evidence where the choice happens. Keep comparable facts in the same order; stack label and value when inline wrapping breaks their connection on a phone. Leave optional explanation behind a disclosure, not the condition that determines the choice. If a fact is unknown, do not manufacture it to complete the layout.
+
+## Audition two structures with the same content
+
+Before final markup, sketch the opening **and** the next beat twice using a few lines of ASCII, layout shorthand or two disposable thumbnails. No production prototypes required. Include the actual title or a realistic item, the action, the dominant mass, and the reading path. For an approved comp, skip the audition and reproduce it. For a precisely specified brief, hold every pinned decision constant; compare only the open axis. For tools or reading surfaces compare retrieval, grouping or navigation, not competing art styles.
+
+Use the first sketch to expose the obvious category template. In the challenger, move the subject into a different role: it could *be* the navigation, establish an ordering, or reveal information through an action instead of sitting beside a slogan. These are operations, not a menu of approved looks. If both thumbnails reduce to “copy | picture, then three cards,” recoloring them is not a second idea. Change how the visitor encounters or uses the material. A conventional list can win if it serves the actual task better; name the concrete reason.
+
+Choose the composition in which the visitor understands the subject and next action with the least explanation. In working notes name the winner, the rejected alternative, the feature visible at thumbnail size, and how the same relationship works on a narrow screen. Preserve those decisions when implementing. A design that needs the rationale printed as page copy has not communicated it yet. Read the headings, labels and actions on their own: do they help someone predict where to find the answer? A run of interchangeable slogans, numbered eyebrows, stamps and repeated strips can make different subjects sound like one campaign. Keep the flourish that expresses this subject; replace the redundant cue with the missing information, or remove it. Don't treat any individual motif as proof of AI authorship.
+
+## Art-direct the material
+
+- **Type:** set a real long and short item in the chosen face. Let width, alignment, figures or line breaks do a job. An italicized last word, tracked eyebrow and micro-label above every section are not hierarchy by themselves. Use one when it conveys a genuine distinction.
+- **Image and negative space:** decide the subject, scale, crop, anchor and the empty space around it. Secondary imagery should answer a new question. For an information product, an actual working view can be stronger than an illustration of one. For a physical subject, avoid collages of filler props masquerading as the object.
+- **Color and material:** identify what needs attention and why. Spend saturation or density there. Neutral controls and a concentrated visual moment often help, but don't neutralize a specified vivid brand or a meaningful data scale.
+- **Rhythm:** use shared edges to tie unlike sections together. Vary the shape of the next beat when the visitor's question changes. Keep identical structures for comparable items; don't chop unrelated material into a card grid just to fill width.
+- **Subtraction:** remove the sticker, frame or accent word in imagination. If the whole identity disappears, the idea lives in decoration. Move it into the structure. Test a neighboring product in the same trade, not a wildly different industry: would changing only the logo and photo make this equally right for them?
+
+A design choice can be modest. A ledger that aligns the amount, exception and next action at a glance may be more distinctive in use than a dashboard with an unusual background. Stop when the choice is legible and the task is easier.

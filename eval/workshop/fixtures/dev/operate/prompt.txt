@@ -1,0 +1,5 @@
+Build a pickup window finder for Second Shelf Tool Library. Borrowers need to find a window that suits their day and see whether there’s room, without calling the desk. Use the actual schedule in pickup-windows.json; this is a finder, not a booking system.
+
+Start with all windows visible. Let people narrow the list by day (or show any day) and independently choose to hide full windows. If both filters are active, apply both. Show each matching window’s day, time, pickup point and number of spots left; make zero spots recognizable as full. If there are no matches, explain why and let people recover without reloading.
+
+Work in the supplied site folder. Make the entire flow work with a keyboard and on a phone, with no external services or internet dependencies.
