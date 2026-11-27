@@ -1,0 +1,47 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+concurrency: release-${{ github.ref_name }}
+
+jobs:
+  check:
+    uses: ./.github/workflows/check.yml
+
+  publish:
+    needs: check
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Pack tagged version
+        run: |
+          version=$(node -p 'require("./package.json").version')
+          [[ "$GITHUB_REF_NAME" == "v$version" && "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          test "$(cargo metadata --no-deps --locked --format-version=1 --manifest-path engine/Cargo.toml | jq -r '.packages[0].version')" = "$version"
+          npm pack --json > "$RUNNER_TEMP/pack.json"
+          echo "VERSION=$version" >> "$GITHUB_ENV"
+          echo "ARCHIVE=$(jq -r '.[0].filename' "$RUNNER_TEMP/pack.json")" >> "$GITHUB_ENV"
+      - name: Publish the archive with npm trusted publishing
+        run: |
+          registry=https://registry.npmjs.org
+          url="$registry/ultimate-frontend/$VERSION"
+          status=$(curl -sS -o "$RUNNER_TEMP/version.json" -w '%{http_code}' "$url")
+          case "$status" in
+            404) npm publish "$ARCHIVE" --registry="$registry" --access public --provenance ;;
+            200) test "$(jq -r '.dist.integrity' "$RUNNER_TEMP/version.json")" = "$(jq -r '.[0].integrity' "$RUNNER_TEMP/pack.json")" ;;
+            *) echo "Registry returned HTTP $status" >&2; exit 1 ;;
+          esac
+      - name: Create GitHub Release with the published archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" "$ARCHIVE" --verify-tag --generate-notes --title "$GITHUB_REF_NAME"

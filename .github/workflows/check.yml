@@ -1,5 +1,9 @@
 name: Check
-on: [push, pull_request]
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_call:
 permissions:
   contents: read
 
@@ -16,9 +20,11 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: npm test
+      - if: runner.os == 'Linux'
+        run: python3 -B tests/interactive.py
 
   engine:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

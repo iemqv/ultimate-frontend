@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { copyFileSync, cpSync, lstatSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, renameSync, rmSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { createInterface } from 'node:readline';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -9,7 +10,27 @@ const agents = new Map(Object.entries({
   codex: '.agents', claude: '.claude', cursor: '.cursor', copilot: '.github',
   gemini: '.gemini', opencode: '.opencode', pi: '.pi',
 }));
-const usage = `Usage: ultimate-frontend install [--agent ${[...agents.keys()].join('|')}]\nInstalls in the current project. Default: codex (.agents/skills).`;
+const usage = `Usage: ultimate-frontend install [--agent NAME ...]\nChoose agents in your terminal or repeat --agent for scripts. Agents: ${[...agents.keys()].join(', ')}.`;
+
+async function chooseAgents() {
+  if (!process.stdin.isTTY || !process.stdout.isTTY) throw new Error('No interactive terminal. Specify an agent, e.g. install --agent claude.');
+  const names = [...agents.keys()];
+  console.log(`Install Ultimate Frontend in ${process.cwd()}\n`);
+  names.forEach((name, i) => console.log(`  ${i + 1}. ${name.padEnd(9)} ${agents.get(name)}/skills/`));
+  const prompt = createInterface({ input: process.stdin, output: process.stdout });
+  try {
+    prompt.setPrompt('Choose numbers or names, separated by commas (Enter to cancel): ');
+    prompt.prompt();
+    for await (const line of prompt) {
+      if (!line.trim()) break;
+      const selected = line.trim().split(/[\s,]+/).map(value => /^\d+$/.test(value) ? names[Number(value) - 1] : value.toLowerCase());
+      if (selected.every(name => agents.has(name))) return selected;
+      console.error('Unknown selection. Choose from the agents listed above.');
+      prompt.prompt();
+    }
+    return [];
+  } finally { prompt.close(); }
+}
 
 function directory(path) {
   try { mkdirSync(path); } catch (err) { if (err.code !== 'EEXIST') throw err; }
@@ -52,6 +73,15 @@ function install(agent) {
 
 const args = process.argv.slice(2);
 if (args.length === 1 && ['-h', '--help'].includes(args[0])) console.log(usage);
-else if (args[0] === 'install' && (args.length === 1 || (args.length === 3 && args[1] === '--agent' && agents.has(args[2])))) {
-  try { install(args[2] ?? 'codex'); } catch (err) { console.error(err.message); process.exitCode = 1; }
+else if (args[0] === 'install') {
+  try {
+    const selected = [];
+    for (let i = 1; i < args.length; i += 2) {
+      if (args[i] !== '--agent' || !agents.has(args[i + 1])) throw new Error(usage);
+      selected.push(args[i + 1]);
+    }
+    const targets = new Set(selected.length ? selected : await chooseAgents());
+    if (!targets.size) console.log('Cancelled. Nothing installed.');
+    for (const name of targets) install(name);
+  } catch (err) { console.error(err.message); process.exitCode = 1; }
 } else { console.error(usage); process.exitCode = 1; }

@@ -4,17 +4,19 @@ A skill for coding agents that build and review web interfaces. Ask for a printm
 
 ## Install in a project
 
-Run the installer **from the project where you want the skill**, then reload your agent. It copies Markdown instructions, references and license notices. It does not edit agent settings, call a model or install browser tooling. Requires Node.js 20 or later.
-
-Install the [npm package](https://www.npmjs.com/package/ultimate-frontend) for your agent. For Claude Code:
+From your frontend project, run:
 
 ```sh
-npx ultimate-frontend@0.6.0 install --agent claude
+npx ultimate-frontend install
 ```
+
+Choose one or more agents by name or number, then reload them. The installer copies the skill, references and license notices. It does not edit agent settings or install a browser. Requires Node.js 20 or later.
+
+For scripts and CI, skip the prompt: `npx ultimate-frontend install --agent claude --agent pi`.
 
 | Agent | `--agent` | Skill directory in your project |
 | --- | --- | --- |
-| Codex (default) | `codex` | `.agents/skills/ultimate-frontend/` |
+| Codex | `codex` | `.agents/skills/ultimate-frontend/` |
 | Claude Code | `claude` | `.claude/skills/ultimate-frontend/` |
 | Cursor | `cursor` | `.cursor/skills/ultimate-frontend/` |
 | GitHub Copilot | `copilot` | `.github/skills/ultimate-frontend/` |
@@ -22,7 +24,7 @@ npx ultimate-frontend@0.6.0 install --agent claude
 | OpenCode | `opencode` | `.opencode/skills/ultimate-frontend/` |
 | Pi | `pi` | `.pi/skills/ultimate-frontend/` |
 
-Repeat the command for another agent. An identical install is a no-op. If the destination differs, the installer stops: move the old copy aside before upgrading. To uninstall, remove just the skill directory in the table.
+An identical install is a no-op. If the destination differs, the installer stops: move the old copy aside before upgrading. To uninstall, remove just the skill directory in the table.
 
 ## Give the agent a task
 

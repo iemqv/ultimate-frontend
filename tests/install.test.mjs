@@ -34,14 +34,15 @@ for (const [agent, dir] of Object.entries(destinations)) {
 
 test('invalid arguments do not touch the workspace', t => {
   const cwd = project(t);
-  assert.equal(run(cwd, 'install', '--agent', '../elsewhere').status, 1);
+  assert.match(run(cwd, 'install').stderr, /No interactive terminal/);
+  assert.equal(run(cwd, 'install', '--agent', 'pi', '--agent', '../elsewhere').status, 1);
   assert.deepEqual(readdirSync(cwd), []);
 });
 
 test('never installs through a linked provider directory', { skip: process.platform === 'win32' }, t => {
   const cwd = project(t), outside = project(t);
   symlinkSync(outside, join(cwd, '.agents'));
-  assert.equal(run(cwd, 'install').status, 1);
+  assert.equal(run(cwd, 'install', '--agent', 'codex').status, 1);
   assert.deepEqual(readdirSync(outside), []);
 });
 
@@ -56,10 +57,11 @@ test('npx installs from the packed artifact with an empty offline cache', t => {
   const [manifest] = JSON.parse(pack.stdout);
   for (const { path } of manifest.files) assert.match(path, /^(?:bin\/|skills\/|licenses\/|LICENSE$|NOTICE$|ATTRIBUTION\.md$|package\.json$|README\.md$)/);
   const result = spawnSync(process.execPath, [join(dirname(process.env.npm_execpath), 'npx-cli.js'), '--yes',
-    '--package', join(packages, manifest.filename), '--', 'ultimate-frontend', 'install'], {
+    '--package', join(packages, manifest.filename), '--', 'ultimate-frontend', 'install', '--agent', 'codex', '--agent', 'claude'], {
     cwd, encoding: 'utf8', env: { ...process.env, npm_config_offline: 'true', npm_config_cache: join(cwd, 'cache') },
   });
   assert.equal(result.status, 0, result.stderr);
+  assert.deepEqual(readFileSync(join(cwd, '.claude/skills/ultimate-frontend/SKILL.md')), readFileSync(join(root, 'skills/ultimate-frontend/SKILL.md')));
   const installed = join(cwd, '.agents/skills/ultimate-frontend');
   const source = join(root, 'skills/ultimate-frontend');
   for (const name of readdirSync(join(source, 'references'))) {
