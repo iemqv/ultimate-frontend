@@ -57,6 +57,10 @@ For browser checks, provide `playwright-core` and its Chromium browser. Set `UF_
 - `cargo test --locked --manifest-path engine/Cargo.toml` checks the CLI. With the binary built and browser configured as above, `node --test adapters/browser/capture.test.cjs engine/tests/browser.cjs` runs real Chromium fixtures.
 - `python3 comparison/verify.py` and `python3 comparison/current/verify.py` check recorded evidence offline. They do not rerun the model or certify a new version’s design quality.
 
+## Release versions
+
+Each push to `main` publishes one patch release after CI passes. For a minor or major release, change only `version` in the root `package.json` (for example, to `0.8.0`). No manual tag or npm command is needed. See [release details](https://github.com/iemqv/ultimate-frontend/blob/main/docs/distribution.md#publish-a-version).
+
 ## Credits and licenses
 
 Adapted from Anthropic’s frontend-design, Emil Kowalski’s apple-design, Leonxlnx’s Taste Skill, Paul Bakaus’s Impeccable and Damir Sokolovsky’s Unslop (CC BY 4.0). The page-sequencing method also draws on Awwwards. [Attribution](ATTRIBUTION.md) lists the source revisions, adaptations and individual license terms. The installer keeps those notices with each copy.

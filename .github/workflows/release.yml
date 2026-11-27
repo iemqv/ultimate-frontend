@@ -1,10 +1,12 @@
 name: Release
 on:
   push:
-    tags: ['v*']
+    branches: [main]
 permissions:
   contents: read
-concurrency: release-${{ github.ref_name }}
+concurrency:
+  group: publish-main
+  queue: max
 
 jobs:
   check:
@@ -19,17 +21,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Reserve release version for this push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python3 -B .github/scripts/prepare-release.py
       - name: Pack tagged version
         run: |
           version=$(node -p 'require("./package.json").version')
-          [[ "$GITHUB_REF_NAME" == "v$version" && "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          test "$VERSION" = "$version"
           test "$(cargo metadata --no-deps --locked --format-version=1 --manifest-path engine/Cargo.toml | jq -r '.packages[0].version')" = "$version"
           npm pack --json > "$RUNNER_TEMP/pack.json"
-          echo "VERSION=$version" >> "$GITHUB_ENV"
           echo "ARCHIVE=$(jq -r '.[0].filename' "$RUNNER_TEMP/pack.json")" >> "$GITHUB_ENV"
       - name: Publish the archive with npm trusted publishing
         run: |
@@ -44,4 +50,17 @@ jobs:
       - name: Create GitHub Release with the published archive
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" "$ARCHIVE" --verify-tag --generate-notes --title "$GITHUB_REF_NAME"
+        run: |
+          tag="v$VERSION"
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            gh release create "$tag" --draft --verify-tag --generate-notes --title "$tag"
+          fi
+          info=$(gh release view "$tag" --json isDraft,assets)
+          if ! jq -e --arg name "$ARCHIVE" 'any(.assets[]; .name == $name)' <<< "$info" >/dev/null; then
+            gh release upload "$tag" "$ARCHIVE"
+          fi
+          gh release download "$tag" --pattern "$ARCHIVE" --output "$RUNNER_TEMP/published.tgz"
+          cmp "$ARCHIVE" "$RUNNER_TEMP/published.tgz"
+          if [[ $(jq -r .isDraft <<< "$info") == true ]]; then
+            gh release edit "$tag" --draft=false
+          fi

@@ -1,7 +1,7 @@
 name: Check
 on:
   push:
-    branches: ['**']
+    branches-ignore: [main]
   pull_request:
   workflow_call:
 permissions:
@@ -21,7 +21,9 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm test
       - if: runner.os == 'Linux'
-        run: python3 -B tests/interactive.py
+        run: |
+          python3 -B tests/interactive.py
+          python3 -B tests/release.py
 
   engine:
     runs-on: ubuntu-24.04
