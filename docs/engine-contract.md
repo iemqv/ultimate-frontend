@@ -2,6 +2,18 @@
 
 The optional `uf` command runs from a source checkout. The [skill installer](distribution.md) does not ship the CLI or the browser adapter.
 
+## Set up the engine
+
+From the Ultimate Frontend checkout, build the CLI and set these variables before starting your agent:
+
+```sh
+cargo build --release --locked --manifest-path engine/Cargo.toml
+export UF_BIN="$PWD/engine/target/release/uf"
+export UF_BROWSER_ADAPTER="$PWD/adapters/browser/capture.cjs"
+```
+
+For browser checks, provide `playwright-core` and its Chromium browser. If Node cannot resolve `playwright-core`, set `UF_PLAYWRIGHT_CORE` to the package directory's absolute path. If you use a separate Chromium install, set `UF_CHROMIUM` to its executable. See the [engine workflow](../skills/ultimate-frontend/references/engine-workflow.md) for how to verify a local preview.
+
 ## Ownership
 
 A single Rust program owns project context discovery, validation, route planning, decision persistence, source checks, interpretation of browser observations, approved-frame comparison and report freshness. The standalone Playwright adapter owns browser launch, input, capture and measurement. The skill owns taste, copy judgment, competing ideas, negotiation and implementation. Project design documents and source tokens remain authoritative. Do not duplicate them in engine state.
@@ -20,4 +32,4 @@ A versioned `Contract` contains `surface`, `intent` (build/refine/critique), `ki
 
 ## Testing
 
-`engine/tests/` exercises CLI contracts, decision persistence and report freshness. The Node suites in `adapters/browser/` and `engine/tests/` exercise real browser actions and regional drift against loopback fixtures. The frozen sites in `comparison/` are evidence from earlier agent runs, not engine test fixtures.
+`engine/tests/` exercises CLI contracts, decision persistence and report freshness. The Node suites in `adapters/browser/` and `engine/tests/` exercise real browser actions and regional drift against loopback fixtures.

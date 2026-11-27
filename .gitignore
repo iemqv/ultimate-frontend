@@ -6,6 +6,11 @@ node_modules/
 /engine/target/
 /.ultimate-frontend/
 
+# Local research and historical comparisons
+/comparison/
+/eval/
+/docs/design-system-plan.md
+
 # Local environment files
 .env
 .env.*

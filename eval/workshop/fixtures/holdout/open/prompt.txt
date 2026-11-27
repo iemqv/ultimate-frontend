@@ -1,5 +1,0 @@
-Build a one-page site for Envelope Garden, a spring seed swap at Reed Street Community Hall. The page should help a new neighbor prepare an eligible envelope and know what will happen when they drop it off.
-
-Drop-offs are April 1–10 at the hall’s front desk. Bring up to two envelopes of open-pollinated flower or vegetable seeds. Label each envelope with the plant name and harvest year. Please don’t bring treated or wild-collected seed. For every envelope you leave, you may take one from the swap box while supplies last. Taking part is free.
-
-Work in the supplied site folder. Make the page usable on a phone and a desktop without fetching anything from the internet.

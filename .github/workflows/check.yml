@@ -43,8 +43,3 @@ jobs:
           node "$RUNNER_TEMP/uf-browser/node_modules/playwright-core/cli.js" install --with-deps chromium --only-shell
           echo "UF_PLAYWRIGHT_CORE=$RUNNER_TEMP/uf-browser/node_modules/playwright-core" >> "$GITHUB_ENV"
       - run: node --test adapters/browser/capture.test.cjs engine/tests/browser.cjs
-      - run: node eval/workshop/gallery/test_gallery.cjs
-      - run: |
-          python3 -EB comparison/verify.py
-          python3 -EB comparison/current/verify.py
-          python3 -EB -m unittest discover -s eval/workshop -p 'test_*.py'

@@ -1,8 +1,0 @@
-[
-  { "id": "tue-courtyard", "day": "Tuesday", "time": "09:00–09:30", "pickupPoint": "Courtyard Gate", "spotsLeft": 3 },
-  { "id": "tue-locker", "day": "Tuesday", "time": "12:00–12:30", "pickupPoint": "Locker Wall", "spotsLeft": 0 },
-  { "id": "tue-desk", "day": "Tuesday", "time": "17:30–18:00", "pickupPoint": "Workshop Desk", "spotsLeft": 1 },
-  { "id": "thu-desk", "day": "Thursday", "time": "12:00–12:30", "pickupPoint": "Workshop Desk", "spotsLeft": 2 },
-  { "id": "thu-courtyard", "day": "Thursday", "time": "17:30–18:00", "pickupPoint": "Courtyard Gate", "spotsLeft": 0 },
-  { "id": "sat-locker", "day": "Saturday", "time": "10:00–10:30", "pickupPoint": "Locker Wall", "spotsLeft": 0 }
-]
