@@ -1,15 +1,34 @@
 {
   "name": "ultimate-frontend",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Install a frontend design and browser review skill for Codex, Claude Code, Cursor, Copilot, Gemini CLI, OpenCode and Pi.",
-  "bin": { "ultimate-frontend": "bin/ultimate-frontend.mjs" },
-  "engines": { "node": ">=20" },
-  "files": ["bin/", "skills/", "licenses/", "ATTRIBUTION.md", "NOTICE", "LICENSE"],
-  "scripts": { "test": "node --test tests/install.test.mjs" },
+  "bin": {
+    "ultimate-frontend": "bin/ultimate-frontend.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "bin/",
+    "skills/",
+    "licenses/",
+    "ATTRIBUTION.md",
+    "NOTICE",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/install.test.mjs"
+  },
   "license": "(Apache-2.0 AND MIT AND CC-BY-4.0)",
-  "keywords": ["pi-package", "agent-skills", "frontend"],
+  "keywords": [
+    "pi-package",
+    "agent-skills",
+    "frontend"
+  ],
   "repository": "git+https://github.com/iemqv/ultimate-frontend.git",
   "pi": {
-    "skills": ["./skills"]
+    "skills": [
+      "./skills"
+    ]
   }
 }
