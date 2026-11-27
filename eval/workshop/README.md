@@ -13,7 +13,7 @@ Use the interactive preview for actions and the desktop and phone screenshots to
 
 ## Reproduce the protocol
 
-Run from this directory on a Linux machine with the Pi SDK, bubblewrap, Playwright and Chromium paths required by `runner/arm.py`. Set `PI_EVAL_AUTH` to a separate local Pi evaluation profile, never your everyday credentials. Do not publish a round output directory. Each `round.py` invocation runs a free transport preflight and then uses live inference.
+Run from this directory on Linux with the Pi SDK and bubblewrap. Set `UF_PLAYWRIGHT_CORE` to the installed `playwright-core` directory and `UF_CHROMIUM` to the `chrome-headless-shell` executable in a standalone Chromium distribution. The runner mounts these two runtime directories read-only for preview; use dedicated distributions, not project or home directories. Set `PI_EVAL_AUTH` to a separate local Pi evaluation profile, never your everyday credentials. Do not publish a round output directory. The unit tests below are offline. Each `round.py` invocation runs a free transport preflight and then uses live inference. A new development round freezes the skill in the current checkout, not the historical 0.3.0 version; the holdout uses the supplied pilot baseline.
 
 ```sh
 python3 -B -m unittest test_round test_verify_inputs

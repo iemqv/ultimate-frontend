@@ -1,20 +1,31 @@
 ---
 name: ultimate-frontend
-description: Design, build, refine or critique a frontend. Use for websites, product interfaces, art direction, copy editing and gesture work. Choose a route by the visitor's task; verify the finished composition and behavior in a browser.
+description: Design, build, refine or critique a web frontend. Use for creative websites, product and reading interfaces, approved visual comps, copy and interaction work. Choose one route for the visitor's task and distinguish source checks from browser evidence.
 ---
 
 # Ultimate Frontend
 
-Choose **one** route, not a stack of aesthetic instructions. An explicit brief, existing design system, approved comp, real content and accessibility requirements take precedence. Read the selected route before creating the UI.
+Use this as the single entry point. Read the brief, project instructions, design docs, tokens, components, content, and known decisions for the affected surface. Identify the visitor, useful outcome, and what must stay. The brief, existing design system, approved comp, truthful content, and accessibility requirements govern; generic visual advice does not override them. If authoritative sources conflict in a way that changes the result, identify the conflict before implementing. Don't copy project tokens or facts into a second source of truth.
 
-**Open creative website or substantial redesign:** follow [Creative build](references/creative-build.md) in order. On a short, open brief, start inside the destination. Build its resting state and next useful state instead of adding stock sections. Reject peer tiles and filler copy in the rendered page, including below the opening.
+Read [Engine workflow](references/engine-workflow.md) for `uf` discovery, route planning, and evidence. If the executable is unavailable, use the same route and checks directly; don't install anything automatically. Select **one** route in this order:
 
-**Product or reading interface:** start with the visitor's task and real data or prose. Use [Composition](references/composition.md) to choose hierarchy and grouping and [Interaction](references/interaction.md) for input, feedback, interruption and recovery. Use familiar grids, comparable rows, ordinary controls or long-form text when the task calls for them. The creative site's constraints on tiles and copy do not override the work.
+| Route | What to do |
+| --- | --- |
+| **Critique** | Review only. Reproduce the affected state and width when possible. Use [Signs](references/signs.md) and relevant [Interaction](references/interaction.md) guidance. Report the evidence, visitor impact, and specific remedy; don't edit the project or record a decision. |
+| **Refine** | Reproduce the defect and fix it locally. Preserve surrounding choices and any supplied comp. Use [Signs](references/signs.md) or [Interaction](references/interaction.md) as relevant. Compare before and after in the same state and width; don't turn the fix into a redesign. |
+| **Build to an approved comp** | Treat the supplied composition as the reference, not an inspiration board. Use [Build the frame](references/build-the-frame.md) to preserve working edges, typography, crops, and responsive order. Match declared regions at the corresponding state and width; don't audition another identity. |
+| **Open creative build or substantial redesign** | Follow [Creative build](references/creative-build.md). For a short brief, start inside the destination. Choose an idea from the subject and build the resting and next useful states before adding a shell or sections. A direction study is required; a second rendered comp is not. |
+| **Product or reading build** | Use [Composition](references/composition.md) to organize real data or prose around the work. Give the visitor the deciding fact or working control at the point of need. Use comparable rows, grids, ordinary controls, or sustained prose when appropriate. Don't apply the open creative route's tile or copy constraints here. |
 
-**Approved visual direction:** keep the supplied composition. Identify working edges, type, crops, state transitions and narrow-screen order. Use [Build the frame](references/build-the-frame.md) to implement and compare the rendered result; do not audition another identity.
+The routes combine six methods, not six skill invocations:
 
-**Local refinement or critique:** reproduce the affected state at the relevant width. Use the relevant [diagnostic family](references/signs.md) or [interaction guidance](references/interaction.md). Preserve good choices outside the defect. For critique only, report observed impact and remedy without editing.
+- **Impeccable:** identify the surface job and preserve/build boundary; compare implementation to the approved frame when one exists.
+- **Frontend Design:** derive a distinctive spatial or typographic choice from the subject, not from a preset look.
+- **Taste:** choose a medium that lets the visitor use the real material; study a structural alternative when it helps resolve a choice.
+- **Awwwards:** connect creative scenes so the next frame changes what the visitor sees, knows, or can do. A state change can be the next scene; scroll effects aren't required.
+- **Apple Design:** match feedback to input, and cover release, interruption, recovery, keyboard parity, and reduced motion as applicable. Read [Interaction](references/interaction.md) for the affected controls.
+- **Unslop:** remove observable copy or hierarchy defects, not every repeated shape or phrase. Keep essential labels, facts, and authored language. For RTL layouts read [RTL](references/rtl.md) before setting alignment and directional behavior.
 
-For RTL layouts, read [RTL](references/rtl.md) before choosing alignments or directional controls. Use the relevant [finish check](references/finish-check.md) for every route. Never invent commercial facts, endorsements, addresses or a successful transaction to complete a layout.
+Use the [finish check](references/finish-check.md) for every route. Inspect the actual frames and exercise the visitor's task where the browser is available. If it isn't, say which frames, states, and behaviors remain unobserved. Never invent commercial facts, endorsements, addresses, or a successful transaction to complete a layout.
 
 Credits and changes: `ATTRIBUTION.md` in the distribution. The included visual diagnostics and RTL catalog are by [Damir Sokolovsky](https://github.com/heydamir/unslop), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

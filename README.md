@@ -1,37 +1,60 @@
 # Ultimate Frontend
 
-**One skill for frontend direction, interaction, and browser verification.**
+A skill for coding agents that build and review web interfaces. Ask for a printmaker’s portfolio and it starts with a print worth looking at. Ask to fix keyboard navigation in a settings panel and it leaves the rest of the panel alone.
 
-[Open the current two-site comparison](comparison/current/index.html) in a browser from a local checkout. Both sites started from the same one-line brief and an empty workspace. Compare desktop and phone renders, try both sites, then reveal which one used the skill.
+## Install in a project
 
-Ultimate Frontend combines six approaches without loading six skills. Taste and Awwwards guide the choice of subject and how it develops down the page. Impeccable and frontend-design turn that idea into a rendered composition. Apple Design governs the controls; Unslop cuts stock layouts and unnecessary words before they become finished sections. For a short creative brief, build the experience the visitor came for and its next useful state before deciding whether the site needs more sections. Product tasks use a separate route, and approved comps stay authoritative.
+Run the installer **from the project where you want the skill**, then reload your agent. It copies Markdown instructions, references and license notices. It does not edit agent settings, call a model or install browser tooling. Requires Node.js 20 or later.
 
-## Use with Pi
-
-From a local checkout:
+Install the [npm package](https://www.npmjs.com/package/ultimate-frontend) for your agent. For Claude Code:
 
 ```sh
-pi --skill ./skills/ultimate-frontend
+npx ultimate-frontend@0.6.0 install --agent claude
 ```
 
-Describe the UI task in your own words, or invoke `/skill:ultimate-frontend` explicitly. To install the checkout as a persistent Pi package, run `pi install "$PWD"` from the repository root. If your Pi setup already loads the source skills, disable them for this project if you want a single frontend workflow.
+| Agent | `--agent` | Skill directory in your project |
+| --- | --- | --- |
+| Codex (default) | `codex` | `.agents/skills/ultimate-frontend/` |
+| Claude Code | `claude` | `.claude/skills/ultimate-frontend/` |
+| Cursor | `cursor` | `.cursor/skills/ultimate-frontend/` |
+| GitHub Copilot | `copilot` | `.github/skills/ultimate-frontend/` |
+| Gemini CLI | `gemini` | `.gemini/skills/ultimate-frontend/` |
+| OpenCode | `opencode` | `.opencode/skills/ultimate-frontend/` |
+| Pi | `pi` | `.pi/skills/ultimate-frontend/` |
 
-For other agents that support `SKILL.md`, place the `skills/ultimate-frontend` directory in their skill directory. Keep its `references/` directory with it and retain the attribution and licenses when distributing copies. Pi is the reference integration; other runtimes are not verified here.
+Repeat the command for another agent. An identical install is a no-op. If the destination differs, the installer stops: move the old copy aside before upgrading. To uninstall, remove just the skill directory in the table.
 
-## What changes with the task
+## Give the agent a task
 
-| Task | What the skill prioritizes |
+Use the skill by name in a normal request. In Pi you can also type `/skill:ultimate-frontend`.
+
+| Try this | Expected scope |
 | --- | --- |
-| Design a product landing page | Compare two ideas drawn from the subject. Build the opening state and the next useful state. Inspect both at desktop and phone widths, and check the middle of any scrolling page. |
-| Refine a drag-to-reorder list | Preserve the existing UI. Keep the row under the pointer, support interruption and keyboard reordering, and verify the result after a drop. |
-| Critique an existing settings screen | Inspect the live screen and its states. Report observed obstacles and their impact without editing the code. |
+| “Build a portfolio for a woodcut artist. Visitors should be able to inspect the prints.” | Choose a composition around the work. Build the opening and what happens when a visitor selects a print, at phone and desktop widths. |
+| “Make this reorderable list work without a mouse.” | Preserve its layout. Check pickup, placement, focus and cancellation with the keyboard. |
+| “Review checkout against this approved mockup. Don’t change code.” | Inspect the specified states and report observed differences. The approved comp outranks stylistic suggestions. |
 
-Accessibility, project constraints, and the approved direction outrank stylistic suggestions. A dashboard doesn't inherit a landing page's need for visual drama. A gesture doesn't inherit a blanket prohibition on animation: motion is useful when it communicates state or preserves continuity.
+**One example, not a benchmark:** in the [print workshop comparison](https://github.com/iemqv/ultimate-frontend/blob/main/comparison/current/RESULTS.md), the control produced a scrolling page; the 0.5.0 skill produced a browsable print with a texture view. The control was more useful for finding a class. The [saved screenshots](https://github.com/iemqv/ultimate-frontend/tree/main/comparison/current) are from that experiment, not the current release.
 
-## Evaluate a change
+## Optional: verify a running interface
 
-See the [one-brief protocol](comparison/PROTOCOL.md) for the live-agent experiment and [current results](comparison/current/RESULTS.md) for observations and limitations (contains spoilers). The [previous pair](comparison/index.html) and its [findings](comparison/RESULTS.md) are preserved. The `comparison/` directory holds frozen evidence, including the exact skill revision for each published pair. The `eval/` directory holds [earlier protocols and fixtures](eval/README.md); neither directory ships with the skill.
+Your agent supplies the model and edits the application. The skill itself has no API endpoint. Without extra tools it can guide the implementation and report what remains unchecked. The checkout includes `uf`, a local Rust CLI for planning, recording project decisions and verifying declared browser scenarios. It is **not included** in the npm installer.
 
-## Credits
+```sh
+# From the ultimate-frontend checkout, before starting your agent:
+cargo build --release --locked --manifest-path engine/Cargo.toml
+export UF_BIN="$PWD/engine/target/release/uf"
+export UF_BROWSER_ADAPTER="$PWD/adapters/browser/capture.cjs"
+```
 
-Adapted from [Anthropic's frontend-design](https://github.com/anthropics/skills), [Emil Kowalski's apple-design](https://github.com/emilkowalski/skills), [Leonxlnx's Taste Skill](https://github.com/Leonxlnx/taste-skill), [Paul Bakaus's Impeccable](https://github.com/pbakaus/impeccable), and [Damir Sokolovsky's Unslop](https://github.com/heydamir/unslop) ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), adapted). The page-sequencing method also draws on [Awwwards](https://github.com/juliobsz/skills). See [Attribution](ATTRIBUTION.md) for source identifiers, modifications and original terms.
+For browser checks, provide `playwright-core` and its Chromium browser. Set `UF_PLAYWRIGHT_CORE` to the absolute package directory if Node cannot resolve it, and `UF_CHROMIUM` to the executable if using a separate Chromium install. Start your app on an isolated loopback origin. Verification checks only the declared actions, states, regions and viewports. An unavailable browser is not a pass. See the [engine contract](https://github.com/iemqv/ultimate-frontend/blob/main/docs/engine-contract.md) for commands and exit codes.
+
+## Check a contribution
+
+- `npm test` checks the installer and an offline install from the actual tarball.
+- `cargo test --locked --manifest-path engine/Cargo.toml` checks the CLI. With the binary built and browser configured as above, `node --test adapters/browser/capture.test.cjs engine/tests/browser.cjs` runs real Chromium fixtures.
+- `python3 comparison/verify.py` and `python3 comparison/current/verify.py` check recorded evidence offline. They do not rerun the model or certify a new version’s design quality.
+
+## Credits and licenses
+
+Adapted from Anthropic’s frontend-design, Emil Kowalski’s apple-design, Leonxlnx’s Taste Skill, Paul Bakaus’s Impeccable and Damir Sokolovsky’s Unslop (CC BY 4.0). The page-sequencing method also draws on Awwwards. [Attribution](ATTRIBUTION.md) lists the source revisions, adaptations and individual license terms. The installer keeps those notices with each copy.

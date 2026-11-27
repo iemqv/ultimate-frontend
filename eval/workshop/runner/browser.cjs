@@ -1,4 +1,3 @@
-// Runs only inside the bubblewrap preview namespace.
 const { readFileSync } = require('node:fs');
 const fs = require('node:fs/promises');
 const http = require('node:http');

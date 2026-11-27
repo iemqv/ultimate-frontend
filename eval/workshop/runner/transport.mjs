@@ -1,4 +1,3 @@
-// Trusted Pi process; the browser and model-callable filesystem operations are subprocesses.
 import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { appendFileSync, readFileSync, writeFileSync, renameSync } from 'node:fs';
@@ -36,7 +35,7 @@ function checkpoint() {
 
 function dispatch(op, args = {}, signal) {
   return new Promise((resolve, reject) => {
-    const child = spawn(config.python, [path.join(here, 'arm.py'), '--dispatch', config.site, config.skill ?? '-', config.chromium], {
+    const child = spawn(config.python, [path.join(here, 'arm.py'), '--dispatch', config.site, config.skill ?? '-', config.chromium, config.playwright], {
       env: { PATH: '/usr/bin:/bin', LANG: 'C.UTF-8' }, cwd: '/', stdio: ['pipe', 'pipe', 'ignore'], signal,
     });
     let bytes = 0;

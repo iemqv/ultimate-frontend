@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 node_modules/
 /ultimate-frontend-*.tgz
+/engine/target/
+/.ultimate-frontend/
 
 # Local environment files
 .env

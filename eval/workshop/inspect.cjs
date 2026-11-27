@@ -1,10 +1,7 @@
-// Collect visitor-visible evidence separately from the model's own screenshots.
-// Usage: node inspect.cjs ROOT PORT [ACTION_FILE.json]
-// Actions are per-site recorded tab/keyboard recipes authored after inspecting controls.
 const fs = require('node:fs');
 const path = require('node:path');
-const { chromium } = require('/opt/postman/app/resources/app/node_modules/playwright-core');
-const executablePath = path.join(require('node:os').homedir(), '.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell');
+const { chromium } = require(process.env.UF_PLAYWRIGHT_CORE || 'playwright-core');
+const executablePath = process.env.UF_CHROMIUM;
 
 async function observe(page) {
   return page.evaluate(() => {

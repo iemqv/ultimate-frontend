@@ -1,9 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { chromium } = require('/opt/postman/app/resources/app/node_modules/playwright-core');
-
-// Match the Chromium executable used by ultimate-frontend-eval-r4/browser.cjs.
-const executablePath = '/home/bigboss/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell';
+const { chromium } = require(process.env.UF_PLAYWRIGHT_CORE || 'playwright-core');
+const executablePath = process.env.UF_CHROMIUM;
 const viewports = { desktop: { width: 1440, height: 960 }, mobile: { width: 390, height: 844 } };
 
 function ensureDirectory(location) {

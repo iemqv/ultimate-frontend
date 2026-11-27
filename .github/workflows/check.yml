@@ -1,0 +1,42 @@
+name: Check
+on: [push, pull_request]
+permissions:
+  contents: read
+
+jobs:
+  installer:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [20, 22]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+
+  engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: |
+          cargo fmt --manifest-path engine/Cargo.toml --check
+          cargo clippy --locked --manifest-path engine/Cargo.toml --all-targets -- -D warnings
+          cargo test --locked --manifest-path engine/Cargo.toml
+          cargo build --locked --manifest-path engine/Cargo.toml
+      - name: Install test browser outside the package
+        run: |
+          npm install --prefix "$RUNNER_TEMP/uf-browser" playwright-core@1.59.1 --no-audit --no-fund
+          node "$RUNNER_TEMP/uf-browser/node_modules/playwright-core/cli.js" install --with-deps chromium --only-shell
+          echo "UF_PLAYWRIGHT_CORE=$RUNNER_TEMP/uf-browser/node_modules/playwright-core" >> "$GITHUB_ENV"
+      - run: node --test adapters/browser/capture.test.cjs engine/tests/browser.cjs
+      - run: node eval/workshop/gallery/test_gallery.cjs
+      - run: |
+          python3 -EB comparison/verify.py
+          python3 -EB comparison/current/verify.py
+          python3 -EB -m unittest discover -s eval/workshop -p 'test_*.py'

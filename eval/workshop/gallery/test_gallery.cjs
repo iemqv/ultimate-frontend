@@ -4,8 +4,8 @@ const os = require('node:os');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
 const { once } = require('node:events');
-const { chromium } = require('/opt/postman/app/resources/app/node_modules/playwright-core');
-const executablePath = '/home/bigboss/.cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64/chrome-headless-shell';
+const { chromium } = require(process.env.UF_PLAYWRIGHT_CORE || 'playwright-core');
+const executablePath = process.env.UF_CHROMIUM;
 
 function run(command, args) {
   return new Promise((resolve, reject) => {

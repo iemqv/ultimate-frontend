@@ -252,7 +252,6 @@ class Handler(BaseHTTPRequestHandler):
         if is_index:
             tail = ['index.html']
         content_type = 'text/html; charset=utf-8' if is_index else ASSET_TYPES.get(Path(tail[-1]).suffix.lower())
-        # The operational fixtures load a public schedule or clip list at runtime.
         if tail in (['pickup-windows.json'], ['clips.json']):
             content_type = 'application/json; charset=utf-8'
         if not content_type:

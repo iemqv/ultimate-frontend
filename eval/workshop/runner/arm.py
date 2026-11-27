@@ -15,8 +15,6 @@ import time
 HERE = Path(__file__).resolve().parent
 PYTHON = "/usr/bin/python3"
 PATH = "/usr/bin:/bin"
-PLAYWRIGHT = Path("/opt/postman/app/resources/app/node_modules/playwright-core")
-CHROMIUM = Path.home() / ".cache/ms-playwright/chromium_headless_shell-1255/chrome-headless-shell-linux64"
 MAX_FILES = 256
 MAX_TREE = 32 * 1024 * 1024
 MAX_FILE = 3 * 1024 * 1024
@@ -124,7 +122,7 @@ def sandbox_tool(request):
     raise ValueError("Unknown workspace operation")
 
 
-def dispatch(site, skill, chromium, request):
+def dispatch(site, skill, chromium, playwright, request):
     browser = request["op"] == "preview"
     bwrap = ["/usr/bin/bwrap", "--unshare-all", "--unshare-user", "--disable-userns", "--die-with-parent", "--new-session",
              "--clearenv", "--setenv", "PATH", PATH, "--setenv", "HOME", "/home/arm",
@@ -135,12 +133,11 @@ def dispatch(site, skill, chromium, request):
     if skill and not browser:
         bwrap += ["--ro-bind", skill, "/skill"]
     if browser:
-        bwrap += ["--ro-bind", PLAYWRIGHT, "/playwright", "--ro-bind", chromium, "/chromium",
+        bwrap += ["--ro-bind", playwright, "/playwright", "--ro-bind", chromium, "/chromium",
                   "--ro-bind", "/etc/fonts", "/etc/fonts", "--ro-bind", "/etc/ld.so.cache", "/etc/ld.so.cache",
                   "--ro-bind", HERE / "browser.cjs", "/browser.cjs", "--", "/usr/bin/node", "/browser.cjs"]
     else:
         bwrap += ["--ro-bind", HERE / "arm.py", "/arm.py", "--", PYTHON, "/arm.py", "--sandbox-tool"]
-    # The child namespaces are destroyed on timeout or if the trusted transport dies.
     command = ["/usr/bin/prlimit", "--cpu=25:26", "--fsize=8388608:8388608", "--core=0:0", "--", *bwrap]
     result = subprocess.run(command, input=json.dumps(request).encode(), stdout=subprocess.PIPE,
                             stderr=subprocess.PIPE, timeout=30, check=False, env={"PATH": PATH}, cwd="/")
@@ -174,10 +171,16 @@ def run_arm(out, fixture, prompt, skill_source, *, preflight=False, probe=None):
     pi_root = Path(pi).resolve().parents[2]
     if not (pi_root / "dist/index.js").is_file():
         raise ValueError("Expected the npm Pi SDK installation exposing dist/index.js")
+    if not all(os.environ.get(key) for key in ("UF_PLAYWRIGHT_CORE", "UF_CHROMIUM")):
+        raise ValueError("Set UF_PLAYWRIGHT_CORE to playwright-core and UF_CHROMIUM to chrome-headless-shell")
+    playwright = Path(os.environ["UF_PLAYWRIGHT_CORE"]).resolve(strict=True)
+    chromium = Path(os.environ["UF_CHROMIUM"]).resolve(strict=True)
+    if (json.loads((playwright / "package.json").read_text()).get("name") != "playwright-core"
+            or chromium.name != "chrome-headless-shell" or not chromium.is_file()):
+        raise ValueError("Expected a playwright-core package and standalone chrome-headless-shell")
     credential = None if preflight else auth_file()
     if credential:
-        # Never copy a credential into a model-browsable input or Chromium runtime mount.
-        for source in (fixture, skill_source, Path("/usr"), PLAYWRIGHT, CHROMIUM, Path("/etc/fonts")):
+        for source in (fixture, skill_source, Path("/usr"), playwright, chromium.parent, Path("/etc/fonts")):
             if source and (credential.is_relative_to(source) or source == credential):
                 raise ValueError("Credential must be outside all fixture, skill and sandbox runtime trees")
         if prompt == credential or prompt.samefile(credential):
@@ -203,7 +206,7 @@ def run_arm(out, fixture, prompt, skill_source, *, preflight=False, probe=None):
         copy_tree(fixture, site)
         config = {"out": str(out), "site": str(site), "skill": str(skill) if skill else None,
                   "agentDir": str(agent_dir), "auth": str(credential or agent_dir / "empty-auth.json"),
-                  "sdk": str(pi_root), "python": PYTHON, "chromium": str(CHROMIUM.resolve(strict=True)), "seconds": ARM_SECONDS,
+                  "sdk": str(pi_root), "python": PYTHON, "chromium": str(chromium.parent), "playwright": str(playwright), "seconds": ARM_SECONDS,
                   "preflight": preflight, "probe": probe}
         launch = private / "launch.json"
         launch.write_text(json.dumps(config), encoding="utf-8")
@@ -226,9 +229,9 @@ def main():
         except (ValueError, OSError, KeyError, TypeError) as error:
             print(json.dumps({"ok": False, "error": str(error)[:600]}))
         return 0
-    if len(args) == 4 and args[0] == "--dispatch":
+    if len(args) == 5 and args[0] == "--dispatch":
         try:
-            print(json.dumps(dispatch(args[1], None if args[2] == "-" else args[2], args[3], json.load(sys.stdin))))
+            print(json.dumps(dispatch(args[1], None if args[2] == "-" else args[2], args[3], args[4], json.load(sys.stdin))))
         except (ValueError, OSError, subprocess.TimeoutExpired) as error:
             detail = "Sandbox exceeded 30 seconds" if isinstance(error, subprocess.TimeoutExpired) else str(error)
             print(json.dumps({"ok": False, "error": detail[:600]}))
